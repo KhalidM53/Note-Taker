@@ -1,0 +1,23 @@
+{
+  "name": "note-taker",
+  "version": "1.0.0",
+  "description": "allows users to write and delete notes",
+  "main": "index.js",
+  "scripts": {
+    "test": "test index.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KhalidM53/Note-Taker.git"
+  },
+  "keywords": [
+    "note",
+    "taker"
+  ],
+  "author": "khalid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KhalidM53/Note-Taker/issues"
+  },
+  "homepage": "https://github.com/KhalidM53/Note-Taker#readme"
+}
