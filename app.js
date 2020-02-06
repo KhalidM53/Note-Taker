@@ -1,14 +1,25 @@
-const express = reqiure("express");
 
-const app = express();
+const express = require("express");
 
-const PORT = process.env.PORT || 5000;
+var app = express();
+
+
+const PORT = process.env.PORT || 3000;
+
+
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+
+app.get("/", function(req, res) {
+    res.json(path.join(__dirname, "index.html"));
+  });
+
+
 
 app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
