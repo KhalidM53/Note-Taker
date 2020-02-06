@@ -1,5 +1,5 @@
 
-const notes = require("../db/notes.json");
+const notes = require("../db/db.json");
 const fs = require("fs");
 
 module.exports = function(app) {
@@ -18,7 +18,7 @@ module.exports = function(app) {
           text: req.body.text
       };
       notes.push(note);
-      fs.writeFile("./db/notes.json", JSON.stringify(notes), function (err) {
+      fs.writeFile("../db/db.json", JSON.stringify(notes), function (err) {
         if (err) throw err;
         console.log("Writing to json file");
       });
@@ -29,7 +29,7 @@ module.exports = function(app) {
     if (!note) return res.status(404).send('This note was not found');
     const index = notes.indexOf(note);
     notes.splice(index,1);
-    fs.writeFile("./db/notes.json", JSON.stringify(notes), function (err) {
+    fs.writeFile("../db/db.json", JSON.stringify(notes), function (err) {
         if (err) throw err;
         console.log("Deleting note from json file");
         res.end();
